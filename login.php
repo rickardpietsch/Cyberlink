@@ -3,7 +3,7 @@
 <article>
     <h1>Login</h1>
 
-    <form action="app/auth/login.php" method="post">
+    <form action="app/auth/a_login.php" method="post">
         <div class="form-group">
             <label for="email">Email</label>
             <input class="form-control" type="email" name="email" placeholder="francis@darjeeling.com" required>
@@ -18,6 +18,9 @@
 
         <button type="submit" class="btn btn-primary">Login</button>
     </form>
+
+    <small>Not a user?</small>
+    <a href="signup.php">Sign up here</a>
 </article>
 
 <?php require __DIR__.'/views/footer.php'; ?>

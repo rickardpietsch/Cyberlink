@@ -14,19 +14,17 @@ if (isset($_POST['email'], $_POST['password'])) {
   $statement->bindParam(':email', $email, PDO::PARAM_STR);
   $statement->execute();
   $user = $statement->fetch(PDO::FETCH_ASSOC);
-  // die(var_dump($user));
 
   if (!$user) {
-    header('Location: /login.php'); // /../../login.php
-  } else {
-    if (password_verify($password, $user['password']) === true);
-
-      $_SESSION['user'] = [
-        'id' => $user['id'],
-        'name' => $user['name'],
+    header('Location: /login.php');
+  }
+    if (password_verify($password, $user["password"])) {
+      // die(var_dump($password));
+      $_SESSION['users'] = [
+        'user_id' => $user['user_id'],
+        'username' => $user['username'],
         'email' => $user['email']
       ];
-
       header('Location: /index.php');
   }
 }
