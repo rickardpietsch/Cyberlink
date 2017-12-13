@@ -1,7 +1,7 @@
 <?php require __DIR__.'/views/header.php'; ?>
 
 <?php if (isset($_SESSION['user'])): ?>
-  <p>Welcome, <?php echo $_SESSION['users']['username']?>!</p>
+  <p>Welcome, <?php echo $_SESSION['user']['username']?>!</p>
 <?php endif; ?>
 
 <article>

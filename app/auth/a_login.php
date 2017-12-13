@@ -20,11 +20,12 @@ if (isset($_POST['email'], $_POST['password'])) {
   }
     if (password_verify($password, $user["password"])) {
       // die(var_dump($password));
-      $_SESSION['users'] = [
+      $_SESSION['user'] = [
         'user_id' => $user['user_id'],
         'username' => $user['username'],
         'email' => $user['email']
       ];
+      
       header('Location: /index.php');
   }
 }
