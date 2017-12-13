@@ -14,7 +14,7 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
 <div class="container">
     <div class="row pt-5 justify-content-center">
         <div class="col-md-6">
-            <form action="app/auth/a_edit.php" method="post">
+            <form action="app/auth/a_edit.php" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<?php echo $user['user_id']; ?>">
 
                 <div class="form-group">
@@ -34,6 +34,11 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
                     <textarea class="form-control" name="bio" rows="8" cols="80"><?php echo $user['bio']; ?></textarea>
                     <small class="form-text text-muted">Please write a short biography about yourself.</small>
                 </div><!-- /form-group -->
+
+                <div class="form-group">
+                    <label for="image">Choose an avatar picture to upload.</label>
+                    <input class="form-control" type="file" name="image">
+                </div>
 
                 <button type="submit" class="btn btn-primary">Update</button>
             </form>

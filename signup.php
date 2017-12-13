@@ -22,11 +22,6 @@
             <small class="form-text text-muted">Please choose a password.</small>
         </div><!-- /form-group -->
 
-        <!-- <div class="form-group">
-            <label for="image">Choose an avatar picture to upload.</label>
-            <input class="form-control" type="file" name="image">
-        </div> -->
-
         <button type="submit" class="btn btn-primary">Save</button>
     </form>
 </article>
