@@ -12,9 +12,26 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
 
 ?>
 <div class="container">
+
     <div class="row pt-5 justify-content-center">
         <div class="col-md-6">
             <form action="app/auth/a_edit.php" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="<?php echo $user['user_id']; ?>">
+
+                <img src="<?php echo "/images/".$user['image'] ?>" alt="">
+                <div class="form-group">
+                    <label for="image">Choose an avatar picture to upload.</label>
+                    <input class="form-control" type="file" name="image">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+        </div><!-- /col-md-6 -->
+    </div><!-- /row -->
+
+    <div class="row pt-5 justify-content-center">
+        <div class="col-md-6">
+            <form action="app/auth/a_edit.php" method="post">
                 <input type="hidden" name="id" value="<?php echo $user['user_id']; ?>">
 
                 <div class="form-group">

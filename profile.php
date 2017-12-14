@@ -13,25 +13,15 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <article>
-  <div class="container">
-  <div class="row">
-    <div class="col-">
-      <h1>Profile</h1>
-      <h3>Username: <?php echo $user['username']?></h3>
-      <h3>E-mail: <?php echo $user['email']?></h3>
-      <h3>Bio: <?php echo $user['bio']?></h3>
-      <a href="edit.php"><button type="button" class="btn btn-primary">Update profile</button></a>
-    </div>
-
-    <div class="col-">
-      <img src="
-      <?php if(isset($user['image'])): ?>
-      <?php echo "/images/".$user['image'] ?>
-      <?php else: echo "/images/trump.jpg" ?>
-      <?php endif; ?>
-      " alt=""></img>
-      <a href="image.php"><button type="button" class="btn btn-primary">Change avatar</button></a>
-    </div>
-  </div>
-  </div>
+  <h1>Profile</h1>
+  <img src="
+  <?php if(isset($user['image'])): ?>
+  <?php echo "/images/".$user['image'] ?>
+  <?php else: echo "/images/trump.jpg" ?>
+  <?php endif; ?>
+  " alt=""></img>
+  <h3>Username: <?php echo $user['username']?></h3>
+  <h3>E-mail: <?php echo $user['email']?></h3>
+  <h3>Bio: <?php echo $user['bio']?></h3>
+  <a href="edit.php"><button type="button" class="btn btn-primary">Update profile</button></a>
 </article>
