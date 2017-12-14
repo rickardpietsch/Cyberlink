@@ -13,6 +13,7 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <article>
+  <div class="container">
   <div class="row">
     <div class="col-">
       <h1>Profile</h1>
@@ -31,5 +32,6 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
       " alt=""></img>
       <a href="image.php"><button type="button" class="btn btn-primary">Change avatar</button></a>
     </div>
+  </div>
   </div>
 </article>

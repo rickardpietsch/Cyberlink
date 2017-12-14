@@ -12,6 +12,12 @@
 
       <li class="nav-item">
         <?php if (isset($_SESSION['user'])): ?>
+          <a class="nav-link" href="/post.php">Post</a>
+        <?php endif; ?>
+      </li><!-- /nav-item -->
+
+      <li class="nav-item">
+        <?php if (isset($_SESSION['user'])): ?>
           <a class="nav-link" href="/profile.php">Profile</a>
         <?php endif; ?>
       </li><!-- /nav-item -->

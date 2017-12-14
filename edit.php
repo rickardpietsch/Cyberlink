@@ -30,15 +30,16 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
                 </div><!-- /form-group -->
 
                 <div class="form-group">
+                    <label for="title">Password</label>
+                    <input class="form-control" type="text" name="password" value="">
+                    <small class="form-text text-muted">Please provide a new password.</small>
+                </div><!-- /form-group -->
+
+                <div class="form-group">
                     <label for="title">Biography</label>
                     <textarea class="form-control" name="bio" rows="8" cols="80"><?php echo $user['bio']; ?></textarea>
                     <small class="form-text text-muted">Please write a short biography about yourself.</small>
                 </div><!-- /form-group -->
-
-                <div class="form-group">
-                    <label for="image">Choose an avatar picture to upload.</label>
-                    <input class="form-control" type="file" name="image">
-                </div>
 
                 <button type="submit" class="btn btn-primary">Update</button>
             </form>
