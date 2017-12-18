@@ -24,7 +24,7 @@
       <?php if ($post['user_id'] == $_SESSION['user']['user_id']): ?>
       <form action="edit_post.php" method="post">
           <input type="hidden" name="post_id" value="<?php echo $post['post_id'] ?>">
-          <a href="edit_post.php"><button type="submit" class="btn btn-primary">Update</button></a>
+          <a href="edit_post.php"><button type="submit" class="btn btn-primary">Edit/Delete</button></a>
       </form>
     <?php endif; ?>
   <?php endforeach; ?>

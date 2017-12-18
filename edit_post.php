@@ -43,6 +43,13 @@ if (isset($_POST['post_id'])) {
 
               <button type="submit" class="btn btn-primary">Update</button>
           </form>
+
+          <form action="app/auth/a_delete_post.php" method="post">
+              <input type="hidden" name="post_id" value="<?php echo $post['post_id']; ?>">
+              <button type="submit" class="btn btn-primary">Delete</button>
+          </form>
       </div><!-- /col-md-6 -->
   </div><!-- /row -->
 </div><!-- /container -->
+
+<?php require __DIR__.'/views/footer.php'; ?>

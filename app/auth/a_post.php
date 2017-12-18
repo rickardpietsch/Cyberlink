@@ -20,6 +20,6 @@ if (isset($_POST['title'], $_POST['description'], $_POST['url'])) {
   $statement->bindParam(':author_id', $_SESSION['user']['user_id'], PDO::PARAM_INT);
   $statement->execute();
 
-  header('Location: /post.php');
+  header('Location: /index.php');
 
 }
