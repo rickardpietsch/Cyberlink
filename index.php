@@ -21,11 +21,13 @@
       <a target="_blank" href="<?php echo $post['url']?>"><?php echo $post['url'] ?></a>
       <p>Author: <?php echo $post['username']?></p>
 
+      <?php if ($post['user_id'] == $_SESSION['user']['user_id']): ?>
       <form action="edit_post.php" method="post">
           <input type="hidden" name="post_id" value="<?php echo $post['post_id'] ?>">
           <a href="edit_post.php"><button type="submit" class="btn btn-primary">Update</button></a>
       </form>
-    <?php endforeach ?>
+    <?php endif; ?>
+  <?php endforeach; ?>
   </article>
 <?php endif; ?>
 

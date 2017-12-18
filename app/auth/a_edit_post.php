@@ -6,7 +6,7 @@ if (isset($_POST['post_id'])) {
   $postId = filter_var($_POST['post_id'], FILTER_SANITIZE_NUMBER_INT);
 
   if (isset($_POST['title'])) {
-    $title = password_hash($_POST['title'], FILTER_SANITIZE_STRING);
+    $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
   }
 
   if (isset($_POST['description'])) {
@@ -17,18 +17,17 @@ if (isset($_POST['post_id'])) {
     $url = filter_var($_POST['url'], FILTER_SANITIZE_URL);
   }
 
-  $statement = $pdo->prepare("UPDATE posts set title=:title, description=:description, url=:url WHERE post_id = :post_id");
+  $statement = $pdo->prepare("UPDATE posts set title=:title, description=:description, url=:url WHERE post_id=:post_id");
   if (!$statement) {
     die(var_dump($pdo->errorInfo()));
   }
 
-
   $statement->bindParam(':title', $title, PDO::PARAM_STR);
   $statement->bindParam(':description', $description, PDO::PARAM_STR);
   $statement->bindParam(':url', $url, PDO::PARAM_STR);
-  $statement->bindParam(':user_id', $_SESSION['user']['user_id'], PDO::PARAM_INT);
+  $statement->bindParam(':post_id', $postId, PDO::PARAM_INT);
   $statement->execute();
 
-  header('Location: /profile.php');
+  header('Location: /index.php');
 
 }

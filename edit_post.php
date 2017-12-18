@@ -20,7 +20,7 @@ if (isset($_POST['post_id'])) {
 <div class="container">
   <div class="row pt-5 justify-content-center">
       <div class="col-md-6">
-          <form action="app/auth/a_edit.php" method="post">
+          <form action="app/auth/a_edit_post.php" method="post">
               <input type="hidden" name="post_id" value="<?php echo $post['post_id']; ?>">
 
               <div class="form-group">
