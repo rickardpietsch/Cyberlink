@@ -46,7 +46,7 @@ if (isset($_POST['post_id'])) {
 
           <form action="app/auth/a_delete_post.php" method="post">
               <input type="hidden" name="post_id" value="<?php echo $post['post_id']; ?>">
-              <button type="submit" class="btn btn-primary">Delete</button>
+              <button type="submit" class="btn btn-danger btn-delete">Delete</button>
           </form>
       </div><!-- /col-md-6 -->
   </div><!-- /row -->
