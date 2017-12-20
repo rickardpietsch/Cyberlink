@@ -20,8 +20,8 @@
       <p><?php echo $post['description'] ?></p>
       <a target="_blank" href="<?php echo $post['url']?>"><?php echo $post['url'] ?></a>
       <p>Author: <?php echo $post['username']?></p>
-      <i class="icon" dataSet=1>Plus</i>
-      <i class="icon" dataSet=-1>Minus</i>
+      <i class="icon" data-post_id="<?php echo $post['post_id'] ?>" data-vote="1">Plus</i>
+      <i class="icon" data-post_id="<?php echo $post['post_id'] ?>" data-vote="-1">Minus</i>
 
       <?php if ($post['user_id'] == $_SESSION['user']['user_id']): ?>
       <form action="edit_post.php" method="post">

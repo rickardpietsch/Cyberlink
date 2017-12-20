@@ -13,19 +13,17 @@ if (btnDelete) {
     }
   });
 }
+//Hämta formulär med queryselctor
+//Lyssna på eventets submit på formuläret
+//Confirma att man vill submitta formuläret
+//Submitta (element form.submit)
 
 const rateIcons = document.querySelectorAll('.icon');
 
 rateIcons.forEach((icon) => {
   if (icon) {
     icon.addEventListener('click', (event) => {
-    window.location.replace('app/posts/rating.php');
+    window.location.replace(`app/posts/rating.php?post_id=${icon.dataset.post_id}&vote=${icon.dataset.vote}`);
     });
   }
 });
-
-
-//Hämta formulär med queryselctor
-//Lyssna på eventets submit på formuläret
-//Confirma att man vill submitta formuläret
-//Submitta (element form.submit)
