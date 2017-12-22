@@ -18,7 +18,7 @@ if (isset($_POST['username'], $_POST['email'])) {
     $bio = "";
   }
 
-  $statement = $pdo->prepare("UPDATE users set username=:username, email=:email, password=:password, bio=:bio WHERE user_id = :user_id");
+  $statement = $pdo->prepare("UPDATE users SET username=:username, email=:email, password=:password, bio=:bio WHERE user_id=:user_id");
   if (!$statement) {
     die(var_dump($pdo->errorInfo()));
   }

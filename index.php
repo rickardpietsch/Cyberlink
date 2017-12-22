@@ -20,6 +20,7 @@
       <p><?php echo $post['description'] ?></p>
       <a target="_blank" href="<?php echo $post['url']?>"><?php echo $post['url'] ?></a>
       <p>Author: <?php echo $post['username']?></p>
+      <p>Rating: </p>
       <i class="icon" data-post_id="<?php echo $post['post_id'] ?>" data-vote="1">Plus</i>
       <i class="icon" data-post_id="<?php echo $post['post_id'] ?>" data-vote="-1">Minus</i>
 
