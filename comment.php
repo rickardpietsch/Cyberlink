@@ -13,7 +13,19 @@ if (isset($_GET['post_id'])) {
   $statement->bindParam(':post_id', $postId, PDO::PARAM_INT);
   $statement->execute();
   $post = $statement->fetch(PDO::FETCH_ASSOC);
+
+  $statement = $pdo->prepare("SELECT * FROM comments NATURAL JOIN users WHERE user_id=user_id AND post_id=:post_id");
+  if (!$statement) {
+    die(var_dump($pdo->errorInfo()));
+  }
+
+  $statement->bindParam(':post_id', $postId, PDO::PARAM_INT);
+  $statement->execute();
+  $users = $statement->fetchAll(PDO::FETCH_ASSOC);
 }
+
+
+
 ?>
 <h1>Comment post</h1>
 <h3>Title: <?php echo $post['title'] ?></h3>
@@ -36,3 +48,8 @@ if (isset($_GET['post_id'])) {
       </div><!-- /col-md-6 -->
   </div><!-- /row -->
 </div><!-- /container -->
+
+<?php foreach ($users as $user): ?>
+  <p> <?php echo $user['username'] ?></p>
+  <p> <?php echo $user['comment'] ?></p>
+<?php endforeach; ?>
